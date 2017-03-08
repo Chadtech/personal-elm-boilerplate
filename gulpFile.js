@@ -29,7 +29,7 @@ gulp.task("js", function() {
     cache: {},
   }).bundle()
     .pipe(source("app.js"))
-    // .pipe(buffer())
+    .pipe(buffer())
     .pipe(gulp.dest(paths.development));
 });
 
