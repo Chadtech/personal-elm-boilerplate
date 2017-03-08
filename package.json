@@ -15,7 +15,6 @@
     "browserify"
   ],
   "dependencies": {
-    "body-parser": "^1.15.0",
     "browserify": "^13.0.0",
     "express": "^4.13.4",
     "gulp": "^3.9.1",

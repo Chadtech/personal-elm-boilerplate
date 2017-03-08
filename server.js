@@ -3,11 +3,8 @@ var express = require('express');
 var app = express();
 var http = require('http');
 var join = require('path').join;
-var bodyParser = require('body-parser');
 
 module.exports = function (PORT, log) {
-
-  app.use(bodyParser.json());
 
   app.use(express.static(join(__dirname, '/development')));
 
