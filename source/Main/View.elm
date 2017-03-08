@@ -1,9 +1,9 @@
-module View exposing (view)
+module Main.View exposing (view)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (on, onInput, keyCode)
-import Types exposing (..)
+import Main.Types exposing (..)
 import Json.Decode as Json
 
 

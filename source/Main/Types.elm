@@ -1,4 +1,4 @@
-module Types exposing (..)
+module Main.Types exposing (..)
 
 
 type Msg

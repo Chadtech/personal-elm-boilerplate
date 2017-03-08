@@ -1,7 +1,7 @@
-module Subscriptions exposing (subscriptions)
+module Main.Subscriptions exposing (subscriptions)
 
 
-import Types exposing (..)
+import Main.Types exposing (..)
 import Ports exposing (..)
 
 

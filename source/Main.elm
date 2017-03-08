@@ -1,10 +1,11 @@
 module Main exposing (..)
 
 import Html
-import Types exposing (..)
+import Main.Types exposing (..)
 import Ports exposing (..)
-import View exposing (view)
-import Subscriptions exposing (subscriptions)
+import Main.View exposing (view)
+import Main.Subscriptions exposing (subscriptions)
+import Main.Update exposing (update)
 
 
 -- MAIN
@@ -18,21 +19,3 @@ main =
         , subscriptions = subscriptions
         }
 
-
--- UPDATE
-
-
-update : Msg -> Model -> ( Model, Cmd Msg )
-update message model =
-    case message of
-        UpdateField str ->
-            Model str ! []
-
-        CheckIfEnter code ->
-            if code == 13 then
-                Model "Submitted!" ! []
-            else
-                model ! []
-
-        HandlePort str ->
-            Model str ! []
