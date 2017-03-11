@@ -33,12 +33,12 @@ title =
 inputField : String -> Html Msg
 inputField str =
     input
-        [ class "input-field"
+        [ class "field"
         , value str
         , onInput UpdateField
         , spellcheck False
         , placeholder "Check out these Msgs"
-        , onKeyDown CheckIfEnter
+        , ifEnter HandleEnter
         ]
         []
 
@@ -47,6 +47,6 @@ inputField str =
 -- UTIL
 
 
-onKeyDown : (Int -> Msg) -> Attribute Msg
-onKeyDown msg =
-    on "keydown" <| Json.map msg keyCode
+ifEnter : (Bool -> Msg) -> Attribute Msg
+ifEnter msg =
+    on "keydown" <| Json.map (msg << (==) 13) keyCode

@@ -3,7 +3,7 @@ module Main.Types exposing (..)
 
 type Msg
     = UpdateField String
-    | CheckIfEnter Int
+    | HandleEnter Bool
     | HandlePort String
 
 

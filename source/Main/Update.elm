@@ -9,8 +9,8 @@ update message model =
         UpdateField str ->
             Model str ! []
 
-        CheckIfEnter code ->
-            if code == 13 then
+        HandleEnter itsEnter ->
+            if itsEnter then
                 Model "Submitted!" ! []
             else
                 model ! []
