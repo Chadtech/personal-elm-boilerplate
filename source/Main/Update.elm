@@ -1,19 +1,14 @@
 module Main.Update exposing (update)
 
-import Main.Types exposing (Model, Msg(..))
+import Types.Model exposing (Model)
+import Types.Message exposing (Message(..))
 
 
-update : Msg -> Model -> ( Model, Cmd Msg )
+update : Message -> Model -> ( Model, Cmd Message )
 update message model =
     case message of
         UpdateField str ->
             Model str ! []
-
-        HandleEnter itsEnter ->
-            if itsEnter then
-                Model "Submitted!" ! []
-            else
-                model ! []
 
         HandlePort str ->
             Model str ! []

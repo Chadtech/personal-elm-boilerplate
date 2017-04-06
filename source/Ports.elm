@@ -1,7 +1,7 @@
 port module Ports exposing (..)
 
 
-port toJS : String -> Cmd msg
+port toJS : String -> Cmd message
 
 
-port fromJS : (String -> msg) -> Sub msg
+port fromJS : (String -> message) -> Sub message

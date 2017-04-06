@@ -1,11 +1,12 @@
 module Main.Subscriptions exposing (subscriptions)
 
 
-import Main.Types exposing (..)
+import Types.Model exposing (Model)
+import Types.Message exposing (Message(..))
 import Ports exposing (..)
 
 
-subscriptions : Model -> Sub Msg
+subscriptions : Model -> Sub Message
 subscriptions model =
     fromJS HandlePort
 
