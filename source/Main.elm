@@ -14,4 +14,3 @@ main =
         , update = update
         , subscriptions = subscriptions
         }
-

@@ -1,43 +1,19 @@
 module Main.View exposing (view)
 
-import Html exposing (..)
+import Html exposing (Html)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onInput)
 import Types.Model exposing (Model)
 import Types.Message exposing (Message(..))
-
-
--- VIEW
+import Components.Basics exposing (words, field, mainContainer)
 
 
 view : Model -> Html Message
-view { field } =
-    div
-        [ class "main" ]
-        [ title
-        , inputField field
+view model =
+    mainContainer
+        [ words "big" "Elm Project : Go!"
+        , field
+            UpdateField
+            "Check out these Messages"
+            model.field
         ]
-
-
-
--- COMPONENTS
-
-
-title : Html Message
-title =
-    p
-        [ class "point big" ]
-        [ text "Elm Project : Go!" ]
-
-
-inputField : String -> Html Message
-inputField str =
-    input
-        [ class "field"
-        , value str
-        , onInput UpdateField
-        , spellcheck False
-        , placeholder "Check out these Msgs"
-        ]
-        []
-
