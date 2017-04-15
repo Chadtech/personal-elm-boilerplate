@@ -43,6 +43,7 @@ source/                   -- Source files
     View.elm
 gulpFile.js
 server.js
+```
 
 
 ## Distribution
