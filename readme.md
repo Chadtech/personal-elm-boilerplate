@@ -20,29 +20,37 @@ then open up http://localhost:2984
 
 This repo is organized as ..
 ```
-dist/                     -- Your production-ready app
-dev/                      -- Your development app
+distribution/                     -- Your production-ready app
+development/                      -- Your development app
   index.html
-  assets/                 -- Where you can put images, fonts, etc.
 source/                   -- Source files
   app.js                  -- Loads your elm file, and handles ports
+  Ports.elm               -- Javascript inter-operation ports
   Main.elm
-  *.elm
-  main.styl               -- First style file, concat([main.style, .. ])
-  View/
-    Main.elm              -- Your main view file
-    point.styl
-    input-field.styl
+  Types/
+    Model.elm
+    Message.elm
+  Styles/
+    Main.styl
+    field.styl
+    p.styl
+  Components/
+    Basics.elm
+  Main/
+    Init.elm
+    Subscriptions.elm
+    Update.elm
+    View.elm
 gulpFile.js
 server.js
 
 
-## Dist
+## Distribution
 
-To compile to `dist` type into your terminal..
+To compile to `distribution` type into your terminal..
 
 ```
-gulp dist
+gulp distribution
 ```
 
 It will run the js command without debug on. Its pretty sparse in what it does, but if you have your own dist operations, you can put them in that gulp task.
