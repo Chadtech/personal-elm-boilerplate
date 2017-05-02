@@ -14,14 +14,14 @@ How to get going..
 > elm package install --yes
 > gulp
 
-then open up http://localhost:2984
+then open up http://localhost:2978
 ```
 
 
 This repo is organized as ..
 ```
-distribution/                     -- Your production-ready app
-development/                      -- Your development app
+distribution/             -- Your production-ready app
+development/              -- Your development app
   index.html
 source/                   -- Source files
   app.js                  -- Loads your elm file, and handles ports

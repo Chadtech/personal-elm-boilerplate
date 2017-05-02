@@ -42,9 +42,7 @@ gulp.task("stylus", function() {
 
 
 // Uncomment out for automatic formatting
-// gulp.task("elm", ["elm-format", "elm-make"]);
-gulp.task("elm", ["elm-make"]);
-
+gulp.task("elm", ["elm-format", "elm-make"]);
 
 
 gulp.task("elm-format", function() {
@@ -54,21 +52,27 @@ gulp.task("elm-format", function() {
 
 
 gulp.task("elm-make", function () {
- var cmd;
+  var cmd = [
+    "elm-make",
+    paths.mainElm,
+    "--warn",
+    "--output",
+    paths.development + "/elm.js"
+  ].join(" ");
 
-  cmd = "elm-make ";
-  cmd += paths.mainElm;
-  cmd += " --output ";
-  cmd += paths.development + "/elm.js";
-
-  cp.exec(cmd, function(error, stdout) {
+  cp.exec(cmd, function(error, stdout, stderr) {
     if (error) {
-      util.log(util.colors.cyan("Elm"),
-        util.colors.red(String(error))
-      );
-    } 
+      var error = String(error).slice(0, String(error).length - 1);
+      error.split("\n").forEach(function(line) {
+        util.log(util.colors.red(String(line)))
+      })
+    } else {
+      var stderr = stderr.slice(0, stderr.length - 1);
+      stderr.split("\n").forEach(function(line) {
+        util.log(util.colors.yellow(String(line)))
+      })
+    }
     var stdout = stdout.slice(0, stdout.length - 1);
-
     stdout.split("\n").forEach(function(line) {
       util.log(util.colors.cyan("Elm"), line);
     })
