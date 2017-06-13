@@ -24,24 +24,22 @@ distribution/             -- Your production-ready app
 development/              -- Your development app
   index.html
 source/                   -- Source files
-  app.js                  -- Loads your elm file, and handles ports
+  app.coffee              -- Loads your elm file, and handles ports
   Ports.elm               -- Javascript inter-operation ports
   Main.elm
+  Util.elm                -- Functions that are generally useful
   Types/
-    Model.elm
-    Message.elm
   Styles/
     Main.styl
-    field.styl
     p.styl
-  Components/
-    Basics.elm
   Main/
     Init.elm
     Subscriptions.elm
     Update.elm
     View.elm
-gulpFile.js
+    Model.elm
+    Message.elm
+gulpFile.coffee
 server.js
 ```
 
