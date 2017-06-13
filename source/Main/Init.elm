@@ -1,7 +1,7 @@
 module Main.Init exposing (model, cmd)
 
-import Types.Model exposing (Model)
-import Types.Message exposing (Message(..))
+import Main.Model exposing (Model)
+import Main.Message exposing (Message(..))
 
 
 model : Model

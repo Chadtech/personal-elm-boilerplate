@@ -73,7 +73,7 @@ gulp.task "elm-make", ->
 
         stdout = stdout.slice 0, stdout.length - 1
         (stdout.split "\n").forEach (line) ->
-            util.log (util.colors.cyan "Elm", line)
+            util.log (util.colors.cyan "Elm"), line
 
 
 gulp.task "server", ->

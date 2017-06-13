@@ -1,4 +1,4 @@
-module Types.Message exposing (Message(..), Handler)
+module Main.Message exposing (Message(..), Handler)
 
 
 type Message
