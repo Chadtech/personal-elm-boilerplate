@@ -10,7 +10,10 @@ view : Model -> Html Message
 view model =
     div
         [ class "main" ]
-        [ p
-            []
-            [ text "Elm Project is go" ]
+        [ div
+            [ class "card solitary" ]
+            [ p
+                []
+                [ text "Elm Project is go" ]
+            ]
         ]
